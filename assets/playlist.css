@@ -1,0 +1,137 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+body{
+    background-color: #212329;
+    padding:20px;
+}
+
+video-holder{
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap:20px;
+}
+
+video-holder main-video-holder{
+    flex:1 1 700px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+    background-color: #1b1d22;
+    padding:15px;
+}
+
+video-holder main-video-holder .main-video{
+    margin-bottom: 7px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+video-holder main-video-holder .main-vid-title{
+    font-size: 20px;
+    color:#27f;
+}
+
+video-holder video-playlist-holder{
+    flex:1 1 350px;
+    /* height: 485px; */
+    /* height: clamp( 100px, 100vh, 830px ); */
+    max-height: calc( 100vh - 40px);
+    overflow-y: scroll;
+    border-radius: 5px;
+    /* box-shadow: 0 5px 15px rgba(0,0,0,.1); */
+    box-shadow: 0 5px 15px #0005;
+    background-color: #1b1d22;
+    padding:15px;
+}
+
+video-holder video-playlist-holder::-webkit-scrollbar{
+    width: 10px;
+}
+
+video-holder video-playlist-holder::-webkit-scrollbar-track{
+    background-color: #1b1d22;
+    border-radius: 5px;
+}
+
+video-holder video-playlist-holder::-webkit-scrollbar-thumb{
+    background-color: #212329;
+    border-radius: 5px;
+}
+
+video-holder video-playlist-holder list{
+    display: flex;
+    align-items: center;
+    gap:15px;
+    padding:10px;
+    background-color: #212329;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+video-holder video-playlist-holder list:last-child{
+    margin-bottom: 0;
+}
+
+video-holder video-playlist-holder list.active{
+    background-color: #27f;
+}
+
+video-holder video-playlist-holder list.active .list-title{
+    color:#fff;
+}
+
+video-holder video-playlist-holder list .list-video{
+    width: 100px;
+    border-radius: 5px;
+}
+
+video-holder video-playlist-holder list .list-title{
+    font-size: 17px;
+    color:#fff7;
+}
+
+
+@media (max-width:1200px){
+
+    video-holder{
+        margin:0;
+    }
+
+}
+
+@media (max-width:450px){
+
+    video-holder main-video-holder .main-vid-title{
+        font-size: 15px;
+        text-align: center;
+    }
+
+    video-holder video-playlist-holder list{
+        flex-flow: column;
+        gap:10px;
+    }
+
+    video-holder video-playlist-holder list .list-video{
+        width: 100%;
+    }
+
+    video-holder video-playlist-holder list .list-title{
+        font-size: 15px;
+        text-align: center;
+    }
+
+}
