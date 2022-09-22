@@ -14,4 +14,10 @@ window.addEventListener( "load", ev => {
             document.querySelector( "main-video-holder .main-vid-title" ).innerHTML = title;
         };
     });
+
+
+
+    let videoPoster = document.querySelectorAll( "video" );
+
+    videoPoster.forEach( v => v.setAttribute( "poster", "./assets/dark-matter.webp" ) );
 } );
