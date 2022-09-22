@@ -1,0 +1,428 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Html And CSS Video Playlist</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+body{
+    background-color: #212329;
+    padding:20px;
+}
+
+video-holder{
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap:20px;
+}
+
+video-holder main-video-holder{
+    flex:1 1 700px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+    background-color: #1b1d22;
+    padding:15px;
+}
+
+video-holder main-video-holder .main-video{
+    margin-bottom: 7px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+video-holder main-video-holder .main-vid-title{
+    font-size: 20px;
+    color:#27f;
+}
+
+video-holder video-playlist-holder{
+    flex:1 1 350px;
+    /* height: 485px; */
+    /* height: clamp( 100px, 100vh, 830px ); */
+    max-height: calc( 100vh - 40px);
+    overflow-y: scroll;
+    border-radius: 5px;
+    /* box-shadow: 0 5px 15px rgba(0,0,0,.1); */
+    box-shadow: 0 5px 15px #0005;
+    background-color: #1b1d22;
+    padding:15px;
+}
+
+video-holder video-playlist-holder::-webkit-scrollbar{
+    width: 10px;
+}
+
+video-holder video-playlist-holder::-webkit-scrollbar-track{
+    background-color: #1b1d22;
+    border-radius: 5px;
+}
+
+video-holder video-playlist-holder::-webkit-scrollbar-thumb{
+    background-color: #212329;
+    border-radius: 5px;
+}
+
+video-holder video-playlist-holder list{
+    display: flex;
+    align-items: center;
+    gap:15px;
+    padding:10px;
+    background-color: #212329;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+video-holder video-playlist-holder list:last-child{
+    margin-bottom: 0;
+}
+
+video-holder video-playlist-holder list.active{
+    background-color: #27f;
+}
+
+video-holder video-playlist-holder list.active .list-title{
+    color:#fff;
+}
+
+video-holder video-playlist-holder list .list-video{
+    width: 100px;
+    border-radius: 5px;
+}
+
+video-holder video-playlist-holder list .list-title{
+    font-size: 17px;
+    color:#fff7;
+}
+
+
+@media (max-width:1200px){
+
+    video-holder{
+        margin:0;
+    }
+
+}
+
+@media (max-width:450px){
+
+    video-holder main-video-holder .main-vid-title{
+        font-size: 15px;
+        text-align: center;
+    }
+
+    video-holder video-playlist-holder list{
+        flex-flow: column;
+        gap:10px;
+    }
+
+    video-holder video-playlist-holder list .list-video{
+        width: 100%;
+    }
+
+    video-holder video-playlist-holder list .list-title{
+        font-size: 15px;
+        text-align: center;
+    }
+
+}
+li {
+    list-style: none;
+}
+.container #main-Video {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    outline: none;
+}
+
+/* .playlistBx {
+    position: relative;
+    height: 100%;
+    margin: 0 10px 0 10px;
+} */
+/* .playlist {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 40px);
+    overflow-y: scroll;
+    border-top: 1px solid #dcdee1;
+}
+.playlist::-webkit-scrollbar {
+   width: 0px;
+}
+.playlistBx .row .AllLessons {
+   display: block;
+   text-align: left;
+   color: #dcdee1;
+   font-size: 15px;
+   font-weight: 700;
+   margin-left: 40px;
+   line-height: 40px;
+}
+.playlist li {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   list-style: none;
+   color: #dcdee1;
+   cursor: pointer;
+   border: 1px solid transparent;
+   padding: 15px 20px;
+   border-radius: 5px;
+}
+.playlist li:hover {
+    border: 0.5px solid #375666;
+}
+.playlist li .row span {
+    font-size: 15px;
+    font-weight: 400;
+    color: #dcdee1;
+    text-decoration: none;
+    display: inline-block;
+    text-align: left;
+}
+.playlist li .row span::before {
+    content: '\f01d';
+    font-family: FontAwesome;
+    color: #dcdee1;
+    margin-right: 15px;
+    font-size: 20px;
+}
+ul li.playing .row span::before {
+    content: '\f28c';
+    font-family: FontAwesome;
+    color: #fff;
+    margin-right: 15px;
+    font-size: 20px;
+}
+.playlist li.playing .row span {
+   color: #fff;
+}
+.playlist li span.duration {
+    font-size: 15px;
+    font-weight: 400;
+    display: inline-block;
+    color: #dcdee1;
+    text-align: right;
+}
+.playlist li.playing {
+   pointer-events: none;
+   background: #1d3541;
+   border: 0.5px solid #1d3541;
+} */
+
+
+@media (max-width:1200px){
+
+    video-holder{
+        margin:0;
+    }
+
+}
+
+@media(max-width: 1092px){
+    /* section
+    {
+        padding: 30px 10px;
+    } */
+    .container
+    {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        overflow: hidden;
+    }
+    .container #main-Video
+    {
+        height: 100%;
+    }
+    /* .playlistBx
+    {
+        height: 380px;
+        margin-top: 10px;
+    } */
+    .playlist
+    {
+        position: absolute;
+        width: 100%;
+        height: calc(100% - 40px);
+        overflow-y: scroll;
+    }
+}
+    </style>
+</head>
+<body>
+    <video-holder>
+        <main-video-holder id="video_player">
+            <video controls id="main-Video" src="04. Levantar Caixa Rápido/1. Como a estratégia funciona.mp4"></video>
+            <h2 class="title"></h2>
+        </main-video-holder>
+        <!-- <video-playlist-holder class="playlistBx"> -->
+        <!-- <video-playlist-holder> -->
+            <!-- <div class="header">
+                <div class="row">
+                    <span class="AllLessons"></span>
+                </div>
+            </div> -->
+            <video-playlist-holder class="playlist" id="playlist">
+            </video-playlist-holder>
+        <!-- </video-playlist-holder> -->
+    </video-holder>
+    <!-- <img src="04. Levantar Caixa Rápido/" alt=""> -->
+    <script>
+let allVideos = [
+   {
+      name: "1. Como a estratégia funciona",
+      src: "04. Levantar Caixa Rápido/1. Como a estratégia funciona.mp4",
+      id: "vid_1"
+   },
+   {
+      name: "2. Como conseguir clientes pela internet",
+      src: "04. Levantar Caixa Rápido/2. Como conseguir clientes pela internet.mp4",
+      id: "vid_2"
+   },
+   {
+      name: "3. Como conseguir clientes presencialmente",
+      src: "04. Levantar Caixa Rápido/3. Como conseguir clientes presencialmente.mp4",
+      id: "vid_3"
+   },
+   {
+      name: "4. Qual é a proposta para o cliente",
+      src: "04. Levantar Caixa Rápido/4. Qual é a proposta para o cliente.mp4",
+      id: "vid_4"
+   },
+   {
+      name: "4. Qual é a proposta para o cliente",
+      src: "04. Levantar Caixa Rápido/4. Qual é a proposta para o cliente.mp4",
+      id: "vid_5"
+   },
+   {
+      name: "4. Qual é a proposta para o cliente",
+      src: "04. Levantar Caixa Rápido/4. Qual é a proposta para o cliente.mp4",
+      id: "vid_6"
+   },
+   {
+      name: "4. Qual é a proposta para o cliente",
+      src: "04. Levantar Caixa Rápido/4. Qual é a proposta para o cliente.mp4",
+      id: "vid_7"
+   },
+   {
+      name: "4. Qual é a proposta para o cliente",
+      src: "04. Levantar Caixa Rápido/4. Qual é a proposta para o cliente.mp4",
+      id: "vid_8"
+   },
+   {
+      name: "4. Qual é a proposta para o cliente",
+      src: "04. Levantar Caixa Rápido/4. Qual é a proposta para o cliente.mp4",
+      id: "vid_9"
+   },
+   {
+      name: "4. Qual é a proposta para o cliente",
+      src: "04. Levantar Caixa Rápido/4. Qual é a proposta para o cliente.mp4",
+      id: "vid_10"
+   },
+   {
+      name: "4. Qual é a proposta para o cliente",
+      src: "04. Levantar Caixa Rápido/4. Qual é a proposta para o cliente.mp4",
+      id: "vid_11"
+   }
+]
+    </script>
+    <script>
+// let's select all required tags or elements
+const mainVideo = document.querySelector( "#main-Video" ),
+      musicList = document.querySelector( ".music-list" ),
+      playlist = document.getElementById( "playlist" ),
+      AllLessons = document.querySelector( ".AllLessons" ),
+      videoTitle = document.querySelector( ".title" ),
+      ulTag = document.querySelector( "video-playlist-holder" );
+
+AllLessons.innerHTML = `${ allVideos.length } Lessons`
+
+
+let musicIndex = 1;
+window.addEventListener( "load", () => {
+   loadMusic( musicIndex );
+   playingNow();
+} )
+function playMusic() {
+   mainVideo.play();
+   playlist.classList.add( "active" );
+}
+function loadMusic( indexNumb ) {
+//    mainVideo.src = `${ allVideos[ indexNumb - 1 ].src }.mp4`;
+   mainVideo.src = `${ allVideos[ indexNumb - 1 ].src }`;
+   videoTitle.innerHTML = `${ indexNumb }. ${ allVideos[ indexNumb - 1 ].name }`;
+   
+}
+
+for( let i = 0; i < allVideos.length; i++ ) {
+   let liTag = `<li li-index="${ i + 1 }">
+      <div class="row">
+         <span>${ i + 1 }. ${ allVideos[i].name }</span>
+      </div>
+      <video class="${ allVideos[i].id }" src="${ allVideos[i].src }" style="display: none;" title="${ allVideos[i].name }"></video>
+      <span id="${ allVideos[i].id }" class="duration"></span>
+   </li>`;
+   playlist.insertAdjacentHTML( "beforeend", liTag ); 
+
+   let liVideoDuration = ulTag.querySelector( `#${ allVideos[i].id }` ),
+       liVideoTag = ulTag.querySelector( `.${ allVideos[i].id }` );
+   
+
+   liVideoTag.addEventListener( "loadeddata", () => {
+        let videoDuration = liVideoTag.duration,
+            totalMin = Math.floor( videoDuration / 60 ),
+            totalSec = Math.floor( videoDuration % 60 );
+
+        totalSec < 10 ? totalSec = "0"+ totalSec : totalSec;
+        liVideoDuration.innerText = `${ totalMin }:${ totalSec }`;
+        // adding t duration attribe which we"ll use below
+        liVideoDuration.setAttribute( "t-duration", `${ totalMin }:${ totalSec }` );
+   })  
+}
+// let"s work on play particular song on click
+const allLiTags = playlist.querySelectorAll( "li" );
+function playingNow() {
+   for( let j = 0; j<allVideos.length; j++ ) {
+      if( allLiTags[j].classList.contains( "playing" ) ) {
+         allLiTags[j].classList.remove( "playing" );
+      } if( allLiTags[j].getAttribute( "li-index" ) == musicIndex ) {
+         allLiTags[j].classList.add( "playing" );
+      }
+      // adding onclick attribute in all li tags
+      allLiTags[j].setAttribute( "onclick", "clicked( this )" );
+   }
+}
+
+function clicked( element ) {
+   // getting li index of particular clicked li tag
+   let getIndex = element.getAttribute( "li-index" );
+   musicIndex = getIndex;
+   loadMusic( musicIndex );
+   playMusic();
+   playingNow();
+}
+    </script>
+</body>
+</html>

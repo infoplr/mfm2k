@@ -9,14 +9,56 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="assets/playlist.css">
+        <!-- <link rel="stylesheet" href="assets/playlist.css"> -->
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+            *{
+                font-family: 'Poppins', sans-serif;
+                margin:0; padding:0;
+                box-sizing: border-box;
+                outline: none; border:none;
+                text-decoration: none;
+                text-transform: capitalize;
+            }
+
+            body { 
+                width: 100%; height: calc( 100vh - 58px ); 
+                padding: 58px 0 0 0;
+            }
+
+            appbar {
+                display: block;
+                width: 100%; height: 58px;
+                background: #1b1d22;
+                position: fixed;
+                top: 0; left: 0;
+                box-shadow: #0005 0 0 13px;
+            }
+
+            drawer {
+                display: flex;
+                width: 68px; height: 100%;
+                padding: 8px;
+                background: #1b1c22;
+                position: fixed;
+            }
+
+            home {
+                display: block;
+                width: 100%; height: 100%;
+                /* margin: 58px 0 0 0; */
+            }
+        </style>
     </head>
 <body>
     <appbar></appbar>
-    <drawer></drawer>
+    <drawer>
+        <h2 id="l05">05. Contingência - A Base</h2>
+    </drawer>
 
-    <home>
-        <video-holder>
+<!--     <home>
+        <video-holder> 
         
             <main-video-holder>
                 <video src="05. Contingência - A Base/1. O Facebook vai te bloquear.mp4" loop controls class="main-video"></video>
@@ -31,143 +73,143 @@
                 </list>
             
                 <list>
-                    <video src="05. Contingência - A Base/2. O que é contingência + Mindset contingência.mp4" class="list-video"></video>
+                    <video src="05. Contingência - A Base/2. O que é contingência + Mindset contingência.mp4" class="list-video" preload="none"></video>
                     <h3 class="list-title">2. O que é contingência + Mindset contingência</h3>
                 </list>
             
                 <list>
-                    <video src="05. Contingência - A Base/3. Como conseguir perfis de Facebook.mp4" class="list-video"></video>
+                    <video src="05. Contingência - A Base/3. Como conseguir perfis de Facebook.mp4" class="list-video" preload="none"></video>
                     <h3 class="list-title">3. Como conseguir perfis de Facebook</h3>
                 </list>
             
                 <list>
-                    <video src="05. Contingência - A Base/4. O que é um Multilogin.mp4" class="list-video"></video>
+                    <video src="05. Contingência - A Base/4. O que é um Multilogin.mp4" class="list-video" preload="none"></video>
                     <h3 class="list-title">4. O que é um Multilogin</h3>
                 </list>
             
                 <list>
-                    <video src="05. Contingência - A Base/5. Conheça o supervisor de contingência do Kayky.mp4" class="list-video"></video>
+                    <video src="05. Contingência - A Base/5. Conheça o supervisor de contingência do Kayky.mp4" class="list-video" preload="none"></video>
                     <h3 class="list-title">5. Conheça o supervisor de contingência do Kayky</h3>
                 </list>
             
                 <list>
-                    <video src="05. Contingência - A Base/6. Como funciona o nosso plano de contingência.mp4" class="list-video"></video>
+                    <video src="05. Contingência - A Base/6. Como funciona o nosso plano de contingência.mp4" class="list-video" preload="none"></video>
                     <h3 class="list-title">6. Como funciona o nosso plano de contingência</h3>
                 </list>
             
                 <list>
-                    <video src="05. Contingência - A Base/6.1 - Como comprar perfis de fornecedores.mp4" class="list-video"></video>
+                    <video src="05. Contingência - A Base/6.1 - Como comprar perfis de fornecedores.mp4" class="list-video" preload="none"></video>
                     <h3 class="list-title">6.1 - Como comprar perfis de fornecedores</h3>
                 </list>
             
                 <list>
-                    <video src="05. Contingência - A Base/6.2 - Como comprar ou emprestar perfis de amigos.mp4" class="list-video"></video>
+                    <video src="05. Contingência - A Base/6.2 - Como comprar ou emprestar perfis de amigos.mp4" class="list-video" preload="none"></video>
                     <h3 class="list-title">6.2 - Como comprar ou emprestar perfis de amigos</h3>
                 </list>
             
                 <list>
-                    <video src="05. Contingência - A Base/6.3 - Como comprar perfis pelos classificados.mp4" class="list-video"></video>
+                    <video src="05. Contingência - A Base/6.3 - Como comprar perfis pelos classificados.mp4" class="list-video" preload="none"></video>
                     <h3 class="list-title">6.3 - Como comprar perfis pelos classificados</h3>
                 </list>
             
                 <list>
-                    <video src="05. Contingência - A Base/7. Como redefinir a senha no Facebook.mp4" class="list-video"></video>
+                    <video src="05. Contingência - A Base/7. Como redefinir a senha no Facebook.mp4" class="list-video" preload="none"></video>
                     <h3 class="list-title">7. Como redefinir a senha no Facebook
                     </h3>
                 </list>
             
                 <list>
-                    <video src="05. Contingência - A Base/8. Como logar em perfis comprados.mp4" class="list-video"></video>
+                    <video src="05. Contingência - A Base/8. Como logar em perfis comprados.mp4" class="list-video" preload="none"></video>
                     <h3 class="list-title">8. Como logar em perfis comprados
                     </h3>
                 </list>
             
                 <list>
-                    <video src="05. Contingência - A Base/9. O que é aquecimento de perfis.mp4" class="list-video"></video>
+                    <video src="05. Contingência - A Base/9. O que é aquecimento de perfis.mp4" class="list-video" preload="none"></video>
                     <h3 class="list-title">9. O que é aquecimento de perfis
                     </h3>
                 </list>
             
                 <list>
-                    <video src="05. Contingência - A Base/10. Opções de multilogin.mp4" class="list-video"></video>
+                    <video src="05. Contingência - A Base/10. Opções de multilogin.mp4" class="list-video" preload="none"></video>
                     <h3 class="list-title">10. Opções de multilogin
                     </h3>
                 </list>
             
                 <list>
-                    <video src="05. Contingência - A Base/10.1 Como usar o Dolphin.mp4" class="list-video"></video>
+                    <video src="05. Contingência - A Base/10.1 Como usar o Dolphin.mp4" class="list-video" preload="none"></video>
                     <h3 class="list-title">10.1 Como usar o Dolphin
                     </h3>
                 </list>
             
                 <list>
-                    <video src="05. Contingência - A Base/10.2 Como usar o Incogniton.mp4" class="list-video"></video>
+                    <video src="05. Contingência - A Base/10.2 Como usar o Incogniton.mp4" class="list-video" preload="none"></video>
                     <h3 class="list-title">10.2 Como usar o Incogniton
                     </h3>
                 </list>
             
                 <list>
-                    <video src="05. Contingência - A Base/11. Como usar o 4G.mp4" class="list-video"></video>
+                    <video src="05. Contingência - A Base/11. Como usar o 4G.mp4" class="list-video" preload="none"></video>
                     <h3 class="list-title">11. Como usar o 4G
                     </h3>
                 </list>
             
                 <list>
-                    <video src="05. Contingência - A Base/12. Aquecimento de Perfis Comprados.mp4" class="list-video"></video>
+                    <video src="05. Contingência - A Base/12. Aquecimento de Perfis Comprados.mp4" class="list-video" preload="none"></video>
                     <h3 class="list-title">12. Aquecimento de Perfis Comprados
                     </h3>
                 </list>
             
                 <list>
-                    <video src="05. Contingência - A Base/13. Aquecimento de Perfis Criados.mp4" class="list-video"></video>
+                    <video src="05. Contingência - A Base/13. Aquecimento de Perfis Criados.mp4" class="list-video" preload="none"></video>
                     <h3 class="list-title">13. Aquecimento de Perfis Criados
                     </h3>
                 </list>
             
                 <list>
-                    <video src="05. Contingência - A Base/14. Aquecimento de Página.mp4" class="list-video"></video>
+                    <video src="05. Contingência - A Base/14. Aquecimento de Página.mp4" class="list-video" preload="none"></video>
                     <h3 class="list-title">14. Aquecimento de Página
                     </h3>
                 </list>
             
                 <list>
-                    <video src="05. Contingência - A Base/15. Aquecimento de BM e Conta de Anúncio.mp4" class="list-video"></video>
+                    <video src="05. Contingência - A Base/15. Aquecimento de BM e Conta de Anúncio.mp4" class="list-video" preload="none"></video>
                     <h3 class="list-title">15. Aquecimento de BM e Conta de Anúncio
                     </h3>
                 </list>
             
                 <list>
-                    <video src="05. Contingência - A Base/16. Não cruze dados.mp4" class="list-video"></video>
+                    <video src="05. Contingência - A Base/16. Não cruze dados.mp4" class="list-video" preload="none"></video>
                     <h3 class="list-title">16. Não cruze dados
                     </h3>
                 </list>
             
                 <list>
-                    <video src="05. Contingência - A Base/17. Como organizar sua Contingência.mp4" class="list-video"></video>
+                    <video src="05. Contingência - A Base/17. Como organizar sua Contingência.mp4" class="list-video" preload="none"></video>
                     <h3 class="list-title">17. Como organizar sua Contingência
                     </h3>
                 </list>
             
                 <list>
-                    <video src="05. Contingência - A Base/18. Como automatizar sua contingência.mp4" class="list-video"></video>
+                    <video src="05. Contingência - A Base/18. Como automatizar sua contingência.mp4" class="list-video" preload="none"></video>
                     <h3 class="list-title">18. Como automatizar sua contingência
                     </h3>
                 </list>
             
                 <list>
-                    <video src="05. Contingência - A Base/19. Como resolver bloqueio de Atividade Incomum.mp4" class="list-video"></video>
+                    <video src="05. Contingência - A Base/19. Como resolver bloqueio de Atividade Incomum.mp4" class="list-video" preload="none"></video>
                     <h3 class="list-title">19. Como resolver bloqueio de Atividade Incomum
                     </h3>
                 </list>
             
                 <list>
-                    <video src="05. Contingência - A Base/20. Como resolver bloqueio de restrição de publicidade.mp4" class="list-video"></video>
+                    <video src="05. Contingência - A Base/20. Como resolver bloqueio de restrição de publicidade.mp4" class="list-video" preload="none"></video>
                     <h3 class="list-title">20. Como resolver bloqueio de restrição de publicidade
                     </h3>
                 </list>
             
                 <list>
-                    <video src="05. Contingência - A Base/EXTRA - Como usar o BOT do Telegram.mp4" class="list-video"></video>
+                    <video src="05. Contingência - A Base/EXTRA - Como usar o BOT do Telegram.mp4" class="list-video" preload="none"></video>
                     <h3 class="list-title">EXTRA - Como usar o BOT do Telegram
                     </h3>
                 </list>
@@ -175,8 +217,25 @@
             </video-playlist-holder>
         
         </video-holder>
+    </home> -->
+
+    <home>
+        <iframe src="./5.html" frameborder="0" width="100%" height="100%"></iframe>
     </home>
 
     <script src="assets/playlist.js"></script>
+    <script>
+        window.addEventListener( "load", ev => {
+            let videoPoster = document.querySelectorAll( "video" ),
+                l05 = document.querySelector( "#l05" ),
+                home = document.querySelector( "home" );
+
+            videoPoster.forEach( v => v.setAttribute( "poster", "./assets/dark-matter.webp" ) );
+
+            // l05.addEventListener( "click", ev => {
+            //     home.innerHTML = 
+            // } );
+        } );
+    </script>
 </body>
 </html>
