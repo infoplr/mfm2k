@@ -22,9 +22,13 @@
                 text-transform: capitalize;
             }
 
+            html { height: 100vh; }
+
             body { 
-                width: 100%; height: calc( 100vh - 58px ); 
-                padding: 58px 0 0 0;
+                width: 100%; 
+                height: 100%;
+                background: #212329;
+                position: absolute;
             }
 
             appbar {
@@ -34,207 +38,97 @@
                 position: fixed;
                 top: 0; left: 0;
                 box-shadow: #0005 0 0 13px;
+                z-index: 9;
             }
-
+            
             drawer {
-                display: flex;
-                width: 68px; height: 100%;
-                padding: 8px;
+                display: block;
+                width: 0; height: 100%;
+                padding: 68px 8px 8px;
                 background: #1b1c22;
                 position: fixed;
+                overflow-x: hidden;
+                z-index: 6;
+                transition: .1s;
+                white-space: nowrap;
             }
 
             home {
                 display: block;
-                width: 100%; height: 100%;
-                /* margin: 58px 0 0 0; */
+                width: 100%;
+                height: 100%;
+                height: calc( 100% - 7px );
+                /* margin: 0px 0 0 0; */
+                padding-top: 58px;
+            }
+
+            embed {
+                width: 100%;
+                height: 100%;
+            }
+
+            #drawer-switch { user-select: none; cursor: pointer; }
+
+            btn {
+                /* display: block; */
+                font-size: 1.5em;
+                margin-block-start: 0.83em;
+                margin-block-end: 0.83em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                padding: 10px;
+                background-color: #212329;
+                color: #fff7;
+                cursor: pointer;
+                border-radius: 5px;
+                margin-bottom: 10px;
+            } btn:hover {
+                background: #27f;
+                color: #fff;
             }
         </style>
     </head>
 <body>
-    <appbar></appbar>
+    <appbar> <h2 id="drawer-switch">drawer</h2> </appbar>
     <drawer>
-        <h2 id="l05">05. Contingência - A Base</h2>
+        <btn src="0.html">00. Cronograma Conteúdo</btn>
+        <btn src="1.html">01. Mapa do Sucesso MFM</btn>
+        <btn src="2.html">02. Mindset Milionário</btn>
+        <btn src="3.html">3 BRINDE O Inpicio Digital</btn>
+        <btn src="4.html">04. Levantar Caixa Rápido</btn>
+        <btn src="5.html">05. Contingência - A Base</btn>
     </drawer>
 
-<!--     <home>
-        <video-holder> 
-        
-            <main-video-holder>
-                <video src="05. Contingência - A Base/1. O Facebook vai te bloquear.mp4" loop controls class="main-video"></video>
-                <h3 class="main-vid-title">house flood animation</h3>
-            </main-video-holder>
-            
-            <video-playlist-holder>
-            
-                <list class="active">
-                    <video src="05. Contingência - A Base/1. O Facebook vai te bloquear.mp4" class="list-video"></video>
-                    <h3 class="list-title">1. O Facebook vai te bloquear</h3>
-                </list>
-            
-                <list>
-                    <video src="05. Contingência - A Base/2. O que é contingência + Mindset contingência.mp4" class="list-video" preload="none"></video>
-                    <h3 class="list-title">2. O que é contingência + Mindset contingência</h3>
-                </list>
-            
-                <list>
-                    <video src="05. Contingência - A Base/3. Como conseguir perfis de Facebook.mp4" class="list-video" preload="none"></video>
-                    <h3 class="list-title">3. Como conseguir perfis de Facebook</h3>
-                </list>
-            
-                <list>
-                    <video src="05. Contingência - A Base/4. O que é um Multilogin.mp4" class="list-video" preload="none"></video>
-                    <h3 class="list-title">4. O que é um Multilogin</h3>
-                </list>
-            
-                <list>
-                    <video src="05. Contingência - A Base/5. Conheça o supervisor de contingência do Kayky.mp4" class="list-video" preload="none"></video>
-                    <h3 class="list-title">5. Conheça o supervisor de contingência do Kayky</h3>
-                </list>
-            
-                <list>
-                    <video src="05. Contingência - A Base/6. Como funciona o nosso plano de contingência.mp4" class="list-video" preload="none"></video>
-                    <h3 class="list-title">6. Como funciona o nosso plano de contingência</h3>
-                </list>
-            
-                <list>
-                    <video src="05. Contingência - A Base/6.1 - Como comprar perfis de fornecedores.mp4" class="list-video" preload="none"></video>
-                    <h3 class="list-title">6.1 - Como comprar perfis de fornecedores</h3>
-                </list>
-            
-                <list>
-                    <video src="05. Contingência - A Base/6.2 - Como comprar ou emprestar perfis de amigos.mp4" class="list-video" preload="none"></video>
-                    <h3 class="list-title">6.2 - Como comprar ou emprestar perfis de amigos</h3>
-                </list>
-            
-                <list>
-                    <video src="05. Contingência - A Base/6.3 - Como comprar perfis pelos classificados.mp4" class="list-video" preload="none"></video>
-                    <h3 class="list-title">6.3 - Como comprar perfis pelos classificados</h3>
-                </list>
-            
-                <list>
-                    <video src="05. Contingência - A Base/7. Como redefinir a senha no Facebook.mp4" class="list-video" preload="none"></video>
-                    <h3 class="list-title">7. Como redefinir a senha no Facebook
-                    </h3>
-                </list>
-            
-                <list>
-                    <video src="05. Contingência - A Base/8. Como logar em perfis comprados.mp4" class="list-video" preload="none"></video>
-                    <h3 class="list-title">8. Como logar em perfis comprados
-                    </h3>
-                </list>
-            
-                <list>
-                    <video src="05. Contingência - A Base/9. O que é aquecimento de perfis.mp4" class="list-video" preload="none"></video>
-                    <h3 class="list-title">9. O que é aquecimento de perfis
-                    </h3>
-                </list>
-            
-                <list>
-                    <video src="05. Contingência - A Base/10. Opções de multilogin.mp4" class="list-video" preload="none"></video>
-                    <h3 class="list-title">10. Opções de multilogin
-                    </h3>
-                </list>
-            
-                <list>
-                    <video src="05. Contingência - A Base/10.1 Como usar o Dolphin.mp4" class="list-video" preload="none"></video>
-                    <h3 class="list-title">10.1 Como usar o Dolphin
-                    </h3>
-                </list>
-            
-                <list>
-                    <video src="05. Contingência - A Base/10.2 Como usar o Incogniton.mp4" class="list-video" preload="none"></video>
-                    <h3 class="list-title">10.2 Como usar o Incogniton
-                    </h3>
-                </list>
-            
-                <list>
-                    <video src="05. Contingência - A Base/11. Como usar o 4G.mp4" class="list-video" preload="none"></video>
-                    <h3 class="list-title">11. Como usar o 4G
-                    </h3>
-                </list>
-            
-                <list>
-                    <video src="05. Contingência - A Base/12. Aquecimento de Perfis Comprados.mp4" class="list-video" preload="none"></video>
-                    <h3 class="list-title">12. Aquecimento de Perfis Comprados
-                    </h3>
-                </list>
-            
-                <list>
-                    <video src="05. Contingência - A Base/13. Aquecimento de Perfis Criados.mp4" class="list-video" preload="none"></video>
-                    <h3 class="list-title">13. Aquecimento de Perfis Criados
-                    </h3>
-                </list>
-            
-                <list>
-                    <video src="05. Contingência - A Base/14. Aquecimento de Página.mp4" class="list-video" preload="none"></video>
-                    <h3 class="list-title">14. Aquecimento de Página
-                    </h3>
-                </list>
-            
-                <list>
-                    <video src="05. Contingência - A Base/15. Aquecimento de BM e Conta de Anúncio.mp4" class="list-video" preload="none"></video>
-                    <h3 class="list-title">15. Aquecimento de BM e Conta de Anúncio
-                    </h3>
-                </list>
-            
-                <list>
-                    <video src="05. Contingência - A Base/16. Não cruze dados.mp4" class="list-video" preload="none"></video>
-                    <h3 class="list-title">16. Não cruze dados
-                    </h3>
-                </list>
-            
-                <list>
-                    <video src="05. Contingência - A Base/17. Como organizar sua Contingência.mp4" class="list-video" preload="none"></video>
-                    <h3 class="list-title">17. Como organizar sua Contingência
-                    </h3>
-                </list>
-            
-                <list>
-                    <video src="05. Contingência - A Base/18. Como automatizar sua contingência.mp4" class="list-video" preload="none"></video>
-                    <h3 class="list-title">18. Como automatizar sua contingência
-                    </h3>
-                </list>
-            
-                <list>
-                    <video src="05. Contingência - A Base/19. Como resolver bloqueio de Atividade Incomum.mp4" class="list-video" preload="none"></video>
-                    <h3 class="list-title">19. Como resolver bloqueio de Atividade Incomum
-                    </h3>
-                </list>
-            
-                <list>
-                    <video src="05. Contingência - A Base/20. Como resolver bloqueio de restrição de publicidade.mp4" class="list-video" preload="none"></video>
-                    <h3 class="list-title">20. Como resolver bloqueio de restrição de publicidade
-                    </h3>
-                </list>
-            
-                <list>
-                    <video src="05. Contingência - A Base/EXTRA - Como usar o BOT do Telegram.mp4" class="list-video" preload="none"></video>
-                    <h3 class="list-title">EXTRA - Como usar o BOT do Telegram
-                    </h3>
-                </list>
-            
-            </video-playlist-holder>
-        
-        </video-holder>
-    </home> -->
-
     <home>
-        <iframe src="./5.html" frameborder="0" width="100%" height="100%"></iframe>
+        <embed src="./5.html" />
     </home>
 
     <script src="assets/playlist.js"></script>
     <script>
         window.addEventListener( "load", ev => {
             let videoPoster = document.querySelectorAll( "video" ),
-                l05 = document.querySelector( "#l05" ),
-                home = document.querySelector( "home" );
+                drawerSwitch = document.querySelector( "#drawer-switch" ),
+                drawer = document.querySelector( "drawer" ),
+                home = document.querySelector( "home" ),
+                btn = document.querySelectorAll( "btn" );
 
             videoPoster.forEach( v => v.setAttribute( "poster", "./assets/dark-matter.webp" ) );
 
-            // l05.addEventListener( "click", ev => {
-            //     home.innerHTML = 
-            // } );
+            drawerSwitch.addEventListener( "click", ev => {
+                drawer.style.width == "" ? drawer.style.width = "clamp( 100px, 70%, 350px )" :
+                    drawer.style.width == "0px" ? drawer.style.width = "clamp( 100px, 70%, 350px )" :
+                    drawer.style.width = "0px";
+            } );
+
+            btn.forEach( b => {
+                b.addEventListener( "click", ev => {
+                    home.innerHTML = `<embed src="${b.getAttribute( "src" )}" />`;
+                } ); 
+            } );
         } );
     </script>
 </body>
