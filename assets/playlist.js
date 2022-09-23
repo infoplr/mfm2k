@@ -1,7 +1,7 @@
 
 
 window.addEventListener( "load", ev => {
-    let videoList = document.querySelectorAll( "video-playlist-holder list" );
+    var videoList = document.querySelectorAll( "video-playlist-holder list" );
     
     videoList.forEach( vid => {
         vid.onclick = () => {
@@ -17,7 +17,7 @@ window.addEventListener( "load", ev => {
 
 
 
-    let videoPoster = document.querySelectorAll( "video" );
+    var videoPoster = document.querySelectorAll( "video" );
 
-    videoPoster.forEach( v => v.setAttribute( "poster", "./assets/dark-matter.webp" ) );
+    videoPoster.forEach( v => v.setAttribute( "poster", "../dark-matter.jpg" ) );
 } );

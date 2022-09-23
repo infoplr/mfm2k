@@ -32,9 +32,13 @@
             }
 
             appbar {
-                display: block;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 16px;
                 width: 100%; height: 58px;
                 background: #1b1d22;
+                color: #ffab00;
                 position: fixed;
                 top: 0; left: 0;
                 box-shadow: #0005 0 0 13px;
@@ -44,13 +48,21 @@
             drawer {
                 display: block;
                 width: 0; height: 100%;
-                padding: 68px 8px 8px;
+                /* padding: 68px 8px 8px; */
                 background: #1b1c22;
                 position: fixed;
                 overflow-x: hidden;
                 z-index: 6;
                 transition: .1s;
                 white-space: nowrap;
+            } drawer::-webkit-scrollbar{
+                width: 10px;
+            } drawer::-webkit-scrollbar-track{
+                background-color: #1b1d22;
+                border-radius: 5px;
+            } drawer::-webkit-scrollbar-thumb{
+                background-color: #212329;
+                border-radius: 5px;
             }
 
             home {
@@ -93,24 +105,35 @@
         </style>
     </head>
 <body>
-    <appbar> <h2 id="drawer-switch">drawer</h2> </appbar>
+    <appbar> <h2 id="drawer-switch">&#9776;</h2> 
+        <h2 id="name"></h2>
+        <h2></h2>
+    </appbar>
     <drawer>
-        <btn src="0.html">00. Cronograma Conteúdo</btn>
-        <btn src="1.html">01. Mapa do Sucesso MFM</btn>
-        <btn src="2.html">02. Mindset Milionário</btn>
-        <btn src="3.html">3 BRINDE O Inpicio Digital</btn>
-        <btn src="4.html">04. Levantar Caixa Rápido</btn>
-        <btn src="5.html">05. Contingência - A Base</btn>
+        <btn src="assets/views/Boas Vindas.html">#Boas Vindas</btn>
+        <btn src="assets/views/0.html">00. Cronograma Conteúdo</btn>
+        <btn src="assets/views/1.html">01. Mapa do Sucesso MFM</btn>
+        <btn src="assets/views/2.html">02. Mindset Milionário</btn>
+        <btn src="assets/views/3.html">03. Mentorado Nível Zero</btn>
+        <btn src="assets/views/4.html">04. Levantar Caixa Rápido</btn>
+        <btn src="assets/views/5.html">05. Contingência - A Base</btn>
+        <btn src="assets/views/6.html">06. Criação de PLR 08-09-22</btn>
+        <btn src="assets/views/7.html">07</btn>
+        <btn src="assets/views/8.html">08. Tráfego Pago</btn>
+        <btn src="assets/views/9.html">09. Tráfego Pago Black 20-09-22</btn>
+        <btn src="assets/views/10.html">10. </btn>
+        <btn src="assets/views/11.html">11 - Projeto Tráfego Fácil 20 09 22</btn>
     </drawer>
 
     <home>
-        <embed src="./5.html" />
+        <embed src="assets/views/5.html" />
     </home>
 
     <script src="assets/playlist.js"></script>
     <script>
         window.addEventListener( "load", ev => {
             let videoPoster = document.querySelectorAll( "video" ),
+                appbarName = document.querySelector( "appbar #name" ),
                 drawerSwitch = document.querySelector( "#drawer-switch" ),
                 drawer = document.querySelector( "drawer" ),
                 home = document.querySelector( "home" ),
@@ -119,14 +142,22 @@
             videoPoster.forEach( v => v.setAttribute( "poster", "./assets/dark-matter.webp" ) );
 
             drawerSwitch.addEventListener( "click", ev => {
-                drawer.style.width == "" ? drawer.style.width = "clamp( 100px, 70%, 350px )" :
-                    drawer.style.width == "0px" ? drawer.style.width = "clamp( 100px, 70%, 350px )" :
+                if( drawer.style.width == "" ) { 
+                    drawer.style.width = "clamp( 100px, 70%, 350px )";
+                    drawer.style.padding = "68px 8px 8px" 
+                } else if( drawer.style.width == "0px" ) { 
+                    drawer.style.width = "clamp( 100px, 70%, 350px )" 
+                    drawer.style.padding = "68px 8px 8px" 
+                } else {
                     drawer.style.width = "0px";
+                    drawer.style.padding = "68px 0 0";
+                }
             } );
 
             btn.forEach( b => {
                 b.addEventListener( "click", ev => {
                     home.innerHTML = `<embed src="${b.getAttribute( "src" )}" />`;
+                    appbarName.innerHTML = `${b.innerText}`;
                 } ); 
             } );
         } );
