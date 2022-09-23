@@ -19,5 +19,5 @@ window.addEventListener( "load", ev => {
 
     var videoPoster = document.querySelectorAll( "video" );
 
-    videoPoster.forEach( v => v.setAttribute( "poster", "../dark-matter.jpg" ) );
+    videoPoster.forEach( v => v.setAttribute( "poster", "../../pix/dark-matter.jpg" ) );
 } );
