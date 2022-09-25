@@ -130,6 +130,7 @@ materials {
     background: #1b1d22;
     color: #5f9ea0;
     padding:15px;
+    cursor: pointer;
 } materials > h2 { color: #ffab00; }
 
 
