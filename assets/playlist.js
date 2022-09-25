@@ -20,4 +20,12 @@ window.addEventListener( "load", ev => {
     var videoPoster = document.querySelectorAll( "video" );
 
     videoPoster.forEach( v => v.setAttribute( "poster", "../../pix/dark-matter.jpg" ) );
+
+
+    var l = document.querySelectorAll( "l" );
+    l.forEach( v => {
+        v.addEventListener( "click", ev => {
+            window.open( v.getAttribute( "href", "blank" ) ); 
+        } ); 
+    } );
 } );

@@ -12,14 +12,17 @@
 }
 
 body{
-    background-color: #212329;
+    background: #212329;
     padding:20px;
+} body::-webkit-scrollbar{
+    width: 10px;
+} body::-webkit-scrollbar-track{
+    background: #1b1d22;
+    border-radius: 5px;
+} body::-webkit-scrollbar-thumb{
+    background: #212329;
+    border-radius: 5px;
 }
-
-/* home{
-    display: block;
-    padding:20px;
-} */
 
 video-holder{
     max-width: 1200px;
@@ -34,7 +37,7 @@ video-holder main-video-holder{
     flex:1 1 700px;
     border-radius: 5px;
     box-shadow: 0 5px 15px rgba(0,0,0,.1);
-    background-color: #1b1d22;
+    background: #1b1d22;
     padding:15px;
 }
 
@@ -58,7 +61,7 @@ video-holder video-playlist-holder{
     border-radius: 5px;
     /* box-shadow: 0 5px 15px rgba(0,0,0,.1); */
     box-shadow: 0 5px 15px #0005;
-    background-color: #1b1d22;
+    background: #1b1d22;
     padding:15px;
 }
 
@@ -67,12 +70,12 @@ video-holder video-playlist-holder::-webkit-scrollbar{
 }
 
 video-holder video-playlist-holder::-webkit-scrollbar-track{
-    background-color: #1b1d22;
+    background: #1b1d22;
     border-radius: 5px;
 }
 
 video-holder video-playlist-holder::-webkit-scrollbar-thumb{
-    background-color: #212329;
+    background: #212329;
     border-radius: 5px;
 }
 
@@ -81,7 +84,7 @@ video-holder video-playlist-holder list{
     align-items: center;
     gap:15px;
     padding:10px;
-    background-color: #212329;
+    background: #212329;
     cursor: pointer;
     border-radius: 5px;
     margin-bottom: 10px;
@@ -92,7 +95,7 @@ video-holder video-playlist-holder list:last-child{
 }
 
 video-holder video-playlist-holder list.active{
-    background-color: #27f;
+    background: #27f;
 }
 
 video-holder video-playlist-holder list.active .list-title{
@@ -108,6 +111,26 @@ video-holder video-playlist-holder list .list-title{
     font-size: 17px;
     color:#fff7;
 }
+
+materials-holder {
+    max-width: 1200px;
+    margin: auto;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap:20px;
+}
+
+materials {
+    display: flex; flex-direction: column;
+    flex:1 1 700px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+    background: #1b1d22;
+    color: #5f9ea0;
+    padding:15px;
+} materials > h2 { color: #ffab00; }
 
 
 @media (max-width:1200px){
