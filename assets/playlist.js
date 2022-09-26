@@ -17,9 +17,11 @@ window.addEventListener( "load", ev => {
 
 
 
-    var videoPoster = document.querySelectorAll( "video" );
+    var videoPoster = document.querySelectorAll( "video" ),
+        videoActive = document.querySelector( ".main-video" );
 
     videoPoster.forEach( v => v.setAttribute( "poster", "../../pix/dark-matter.jpg" ) );
+    videoActive.setAttribute( "data-overlay", "2" );
 
 
     var l = document.querySelectorAll( "l" );
